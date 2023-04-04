@@ -16,7 +16,8 @@
     "/dist"
   ],
   "scripts": {
-    "typedoc":"typedoc"
+    "typedoc":"typedoc",
+    "build": "tsc"
   },
   "exports": {
     ".": "./dist/index.js",
