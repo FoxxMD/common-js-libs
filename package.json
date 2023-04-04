@@ -15,6 +15,9 @@
   "files": [
     "/dist"
   ],
+  "scripts": {
+    "typedoc":"typedoc"
+  },
   "exports": {
     ".": "./dist/index.js",
     "./functions": "./dist/functions.js",
@@ -23,7 +26,6 @@
   "devDependencies": {
     "@tsconfig/node16": "^1.0.3",
     "typedoc": "^0.23.28",
-    "typedoc-plugin-markdown": "^3.14.0",
     "typescript": "^4.9.5"
   }
 }
