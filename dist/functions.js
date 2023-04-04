@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.parseGenericValueComparison = exports.GENERIC_VALUE_COMPARISON = void 0;
+exports.comparisonTextOp = exports.parseGenericValueComparison = exports.GENERIC_VALUE_COMPARISON = void 0;
 exports.GENERIC_VALUE_COMPARISON = /^\s*(?<opStr>>|>=|<|<=)\s*(?<value>-?(?:\d+)(?:(?:(?:.|,)\d+)+)?)(?<extra>\s+.*)*$/;
 const GENERIC_VALUE_COMPARISON_URL = 'https://regexr.com/6vama';
 const parseGenericValueComparison = (val, options) => {
@@ -34,3 +34,18 @@ const parseGenericValueComparison = (val, options) => {
     };
 };
 exports.parseGenericValueComparison = parseGenericValueComparison;
+const comparisonTextOp = (val1, strOp, val2) => {
+    switch (strOp) {
+        case '>':
+            return val1 > val2;
+        case '>=':
+            return val1 >= val2;
+        case '<':
+            return val1 < val2;
+        case '<=':
+            return val1 <= val2;
+        default:
+            throw new Error(`${strOp} was not a recognized operator`);
+    }
+};
+exports.comparisonTextOp = comparisonTextOp;

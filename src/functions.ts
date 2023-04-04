@@ -52,3 +52,18 @@ export const parseGenericValueComparison = (val: string, options?: {
         displayText: displayParts.join(''),
     }
 }
+
+export const comparisonTextOp = (val1: number, strOp: string, val2: number): boolean => {
+    switch (strOp) {
+        case '>':
+            return val1 > val2;
+        case '>=':
+            return val1 >= val2;
+        case '<':
+            return val1 < val2;
+        case '<=':
+            return val1 <= val2;
+        default:
+            throw new Error(`${strOp} was not a recognized operator`);
+    }
+}
