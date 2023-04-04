@@ -1,0 +1,9 @@
+{
+  "hideBreadcrumbs": "true",
+  "entryPoints": ["./src/index.ts"],
+  "out": "docs",
+  "plugin": [
+    "typedoc-plugin-markdown"
+  ],
+  "theme": "markdown"
+}
